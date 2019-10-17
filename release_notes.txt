@@ -1,0 +1,66 @@
+
+This document lists the new features, enhancements, fixed issues and, removed or deprecated features (if any) for Hazelcast Management Center 3.12 release. 
+The numbers in the square brackets refer to the issue number in Hazelcast Management Center’s GitHub repository.
+
+
+==== Hazelcast Management Center 3.12 ====
+
+1. New Features
+
+* Introduced the Management Center Configuration (`mc-conf`) tool which
+is a command line utility that allows you to update certain parts of the
+Management Center configuration by using its built-in commands, including
+creating the users externally and resetting security configurations. See
+the Management Center Configuration Tool chapter for more information.
+* Added support for blue/green deployments. Management Center curates
+blacklisted and whitelisted clients that are allowed/not allowed to
+connect to the cluster. Hazelcast IMDG members receive the information
+about the active lists from the Management Center (during startup and later
+on) and apply it for all the current and future clients.
+* Added nested group support for Active Directory and LDAP logins so that
+the nested groups have the same privileges of their parent group. See the
+Authentication Options chapter for more information.
+* The Members page now shows which members have CP data structures.
+
+=== Enhancements
+
+* Added the license notices file for the 3rd Party tools and software used by Management Center. [#1746]
+* Improved the accessibility score for all pages after an investigation using Chrome's inspection tools. [#1687]
+* Added more information to the Map, MultiMap and Replicated Map pages including get, put and remove statistics. [#1646]
+* Increased the unlicensed member count limit from 2 to 3. [#1615]
+* Various improvements in the console including keeping history of the current session. [#1554]
+* Placed cross-references on the License and Manage License pages targeting each other. [#1550]
+* Added the ability to enable the health check from the command line independently of the TLS/SSL settings. [#1359]
+* The numeric columns have been made sortable on the Status page tables. [#1312]
+* The fields of the notifications in the WAN Sync page are now searchable. [#1235]
+* Improved the look and feel behavior of the Scripting and Time Travel pages. [#1148, #1151]
+* The warning log for clustered REST API when the cluster is not found is now more descriptive. [#1101]
+* Improved the readability of chart legends. [#1078]
+* Improved the user interface behavior when it is resized. [#1073, #1246]
+* The process for shutting down a member, now, does not require the group password. [#936]
+* Introduced timestamp information for the JMX output of WAN replication. [#611]
+* Removed an obsolete map configuration metric (Eviction Percentage) from the interface. [#549]
+
+
+=== Fixes
+
+* Fixed an issue where the user's session was being marked as invalid when trying to re-login. [#1710] 
+* Fixed the statistics aggregation in WAN replication JMX API for multiple clusters. [#1704]
+* Fixed an issue where the refreshing a page resulted in loading the Management Center dashboard
+page, instead of the current page. [#1703]
+* Fixed an issue where the time travel files were not deleted for clusters that have a dash in their names. [#1691]
+* Fixed the Time Travel view for WAN replication which was only showing the latest data. [#1664]
+* Fixed an issue where CPU Utilization table was displaying negative values on the Windows Operating System. [#1663]
+* Fixed the play icon for Time Travel which was not displaying for Internet Explorer 11. [#1640]
+* Fixed the Heap Memory Utilization graph view for clients for which the maximizing view function was not working. [#1631]
+* Fixed the error message related to the incompatibility between Hazelcast IMDG and Management Center versions. [#1598]
+* Fixed an issue where the `TOTAL` row in the data tables was showing incorrect totals for the columns that
+do not represent a count. [#1272]
+* Fixed an issue where some of the chart views were showing a time value before 0.0. [#1220]
+* Fixed an issue where the Management Center was still showing the statistics for 2 
+member even the user does not have a license key. Now the statistics are not shown. [#1116]
+* Fixed an issue where a non-existing map was not returning any error messages in Clustered REST. [#1090]
+* Fixed an issue where the `/` and `.` characters in the map and queue names were causing exceptions
+or unexpected behaviors when using Clustered REST. [#1089, [#1091, #1576]
+* Fixed an issue where changing the `backup-count` for a map was not resulting in the expected behavior. [#784]
+* Fixed an issue where the user interface was not refreshing when changing data using its console. [#498]

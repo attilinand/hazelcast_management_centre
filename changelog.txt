@@ -1,0 +1,62 @@
+You can also see the Management Center Release Notes document at http://docs.hazelcast.org/docs/management-center/rn.
+
+Release 3.12
+
+- Introduced the Management Center Configuration (`mc-conf`) tool.
+- Searchable notification fields in the WAN Sync page.
+- Improved the look and feel behavior of the Scripting and Time Travel pages.
+- Improved the user interface behavior when it is resized.
+- Added support for blue/green deployments.
+- Added nested group support for Active Directory and LDAP logins.
+- Members page now shows which members have CP data structures.
+- Added the license notices file for the 3rd Party tools and software used by Management Center.
+- Improved the accessibility score for all pages.
+- Added more information to the Map, MultiMap and Replicated Map pages.
+- Increased the unlicensed member count limit from 2 to 3.
+- Various improvements in the console including keeping history of the current session.
+- Placed cross-references on the License and Manage License pages targeting each other.
+- Added the ability to enable the health check from the command line.
+- The numeric columns have been made sortable on the Status page tables.
+- The warning log for clustered REST API when the cluster is not found is now more descriptive.
+- Improved the readability of chart legends.
+- Improved the user interface behavior when it is resized.
+- The process for shutting down a member, now, does not require the group password.
+- Introduced timestamp information for the JMX output of WAN replication.
+
+Release 3.11
+
+- Introduced "License" screen which shows the details of your Hazelcast Management Center and cluster licenses. 
+- Introduced Delta WAN Synchronization which uses Merkle trees.
+- Added the ability to copy the content of the thread dumps on the Members screen.
+- Hot Restart screen now shows the directory which is configured for Hot Restart backup.
+- Upgraded to the latest Jetty version to eliminate the security vulnerabilities.
+- Improved WAN synchronization screen so that now it shows a stream of events that happen on each member.
+- Improved WAN replication monitoring screen by making the WAN replication status and operations for each member more obvious.
+- Added the option to stop WAN replication for all members.
+
+Release 3.10.3
+- Added the support for configuring Management Center only with secure (TLS) port.
+- Introduced new statistics to Clustered REST and Clustered JMX APIs for map, multimap and replicated map data structures.
+- Improved the start of Management Center on Microsoft Windows operating systems.
+
+
+Release 3.10.2
+
+- Added the capability to change WAN publisher’s states for all members of a cluster at once.
+
+Release 3.10.1
+
+- Introduced variable replacer support.
+- Added ability to configure different SSL keystores and truststores for different parts of the system.
+
+
+Release 3.10
+
+NOTE: Starting with 3.10, you need Java Runtime Environment 1.8 or later to run Hazelcast Management Center properly.
+
+- Introduced Flake ID Generator monitoring.
+- Introduced PN Counter monitoring.
+- Introduced new grid views to provide an overview of all the data structures supported in Hazelcast Management Center. With this grid view enhancement, only the data structure types are listed in the left menu; when you click on a type, a new tab opens on the right listing all its instances along with related parameters.
+- Introduced support for reverse proxy SSL offload.
+- Switched to the latest Jetty version (Jetty 9).
+
